@@ -1,0 +1,43 @@
+¿Qué hace el programa?
+
+Básicamente, el programa hace tres cosas:
+
+Busca códigos maliciosos conocidos:  Tenemos una lista de códigos maliciosos (como virus informáticos) guardados en archivos. El programa revisa si alguno de esos códigos se encuentra dentro de las transmisiones de datos. Si lo encuentra, nos avisa y nos dice en qué posición está.
+
+Busca códigos "espejeados": Algunos códigos maliciosos son palíndromos, es decir, se leen igual de izquierda a derecha que de derecha a izquierda (como la palabra "oso"). El programa busca este tipo de códigos en las transmisiones, ya que pueden ser sospechosos. Nos dice dónde empieza y dónde termina el código "espejeado" más largo que encuentra.
+
+Compara las transmisiones: A veces, los hackers intentan modificar las transmisiones para que parezcan normales. El programa compara las dos transmisiones y encuentra la parte más larga que tienen en común. Esto nos ayuda a ver si hay partes que han sido modificadas.
+
+¿Cómo lo hace?
+
+El programa utiliza funciones para cada tarea:
+
+leer_archivo(): Lee el contenido de un archivo de texto (como los que contienen las transmisiones o los códigos maliciosos) y lo guarda en una variable.
+buscar_patron(): Busca un código malicioso específico dentro de una transmisión.
+buscar_palindromo_mas_largo(): Encuentra el palíndromo más largo en una transmisión.
+substring_comun_mas_largo(): Compara dos transmisiones y encuentra la sección más larga que comparten.
+¿Qué significan los resultados?
+
+Al final, el programa nos muestra varios resultados:
+
+Parte 1: Para cada transmisión y cada código malicioso, nos dice "true" si el código está presente en la transmisión, seguido de la posición donde lo encontró. Si no lo encuentra, dice "false".
+Parte 2: Para cada transmisión, nos da dos números: la posición donde empieza el palíndromo más largo y la posición donde termina.
+Parte 3: Nos da dos números que indican la posición inicial y final de la parte más larga que comparten ambas transmisiones.
+Ejemplo:
+
+Si el programa muestra:
+
+true 7
+false
+...
+3 6
+...
+19 22
+Significa que:
+
+Encontró el primer código malicioso en la posición 7 de la primera transmisión.
+No encontró el segundo código malicioso en la primera transmisión.
+...
+El palíndromo más largo de la primera transmisión va de la posición 3 a la 6.
+...
+La parte más larga que comparten ambas transmisiones va de la posición 19 a la 22.
